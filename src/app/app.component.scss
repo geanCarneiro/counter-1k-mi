@@ -1,0 +1,17 @@
+table {
+    border-collapse: collapse;
+    
+    tr {
+
+        td {
+            padding-inline: 1rem;
+        } 
+
+        &.selected {
+            border: 1px solid blue;
+            padding-left: 1rem;
+        }
+    }
+    
+}
+
