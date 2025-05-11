@@ -1,9 +1,9 @@
-<input type="text" [(ngModel)]="filter" />
+<input #filtroElem type="text" [(ngModel)]="filter" />
 <table>
-  <tr [ngClass]="selectedCounter === i ? 'selected' : ''"  *ngFor="let counter of filteredCounterList; index as i">
-    <td>{{counter.label}}</td>
-    <td>{{counter.count | number: '2.0'}}</td>
-    <td>{{(counter.max - counter.count) | number: '2.0'}}</td>
+  <tr #counterRow tabindex="-1" [ngClass]="selectedCounter === i ? 'selected' : ''"  *ngFor="let counter of filteredCounterList; index as i"
+    >
+    <td [attr.aria-label]="'carta ' + counter.label">{{counter.label}}</td>
+    <td [attr.aria-live]="selectedCounter === i ? 'polite' : 'off'" [attr.aria-label]="counter.count">{{counter.count | number: '2.0'}}</td>
+    <td [attr.aria-label]="'faltam ' + (counter.max - counter.count)">{{(counter.max - counter.count) | number: '2.0'}}</td>
   </tr>
 </table>
-{{tecla}}

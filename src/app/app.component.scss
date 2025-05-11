@@ -1,17 +1,25 @@
 table {
     border-collapse: collapse;
-    
+
     tr {
 
         td {
             padding-inline: 1rem;
-        } 
+        }
 
-        &.selected {
-            border: 1px solid blue;
+        &.selected td:first-of-type {
             padding-left: 1rem;
         }
     }
-    
+
+}
+
+div#ariaMensagem {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 0;
+  overflow: hidden;
 }
 
